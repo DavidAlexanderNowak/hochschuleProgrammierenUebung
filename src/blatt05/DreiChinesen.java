@@ -5,8 +5,8 @@ public class DreiChinesen {
 	private static String kontrabassLiedStrophe = "Drei Chinesen mit dem Kontrabass\nsaﬂen auf der Straﬂe und erz‰hlten sich was.\nDa kam ein Mann: Ja was ist denn das?\nDrei Chinesen mit dem Kontrabass.";
 
 	public static void main(String[] args) {
-		
-		printCentered(changeVowels(kontrabassLiedStrophe,"i"));
+
+		printCentered(changeVowels(kontrabassLiedStrophe, "i"));
 	}
 
 	private static void printCentered(String textToPrint) {
@@ -25,7 +25,10 @@ public class DreiChinesen {
 			System.out.println(textPart[i]);
 		}
 	}
-	
+
+	/**
+	 * 
+	 */
 	private static String changeVowels(String textToChange, String newVowel) {
 		return textToChange.replaceAll("[aeiou]", newVowel);
 	}
