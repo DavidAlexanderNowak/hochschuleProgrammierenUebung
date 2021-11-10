@@ -26,9 +26,6 @@ public class DreiChinesen {
 		}
 	}
 
-	/**
-	 * 
-	 */
 	private static String changeVowels(String textToChange, String newVowel) {
 		return textToChange.replaceAll("[aeiou]", newVowel);
 	}
