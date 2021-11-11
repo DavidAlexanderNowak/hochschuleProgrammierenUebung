@@ -14,7 +14,7 @@ public class Konto {
 	private static String input;
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("Bitte entscheiden Sie welche der folgenden Berechnungen Sie ausführen möchten: ");
+		System.out.println("Bitte entscheiden Sie welche der folgenden Berechnungen Sie ausfï¿½hren mï¿½chten: ");
 		System.out.println("1) Sparplan mit Zinseszins");
 		System.out.println("2) Sparplan ohne Zinseszins");
 		System.out.println("3) Erforderliche Dauer eines Sparziels mit Zinseszins");
@@ -40,25 +40,25 @@ public class Konto {
 		String input = reader.readLine();
 
 		guthaben = Integer.parseInt(input);
-		System.out.println("Ihr Startguthaben beträgt nun " + guthaben + "€!");
+		System.out.println("Ihr Startguthaben betrï¿½gt nun " + guthaben + "ï¿½!");
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Geben sie ihren Zinssatz in % an!");
 
 		input = reader.readLine();
 
 		zins = Integer.parseInt(input);
-		System.out.println("Ihr Jahreszinssatz beträgt nun " + zins + "%");
+		System.out.println("Ihr Jahreszinssatz betrï¿½gt nun " + zins + "%");
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Geben sie ihre Laufzeit in Jahren an!");
 
 		input = reader.readLine();
 
 		jahre = Integer.parseInt(input);
-		System.out.println("Ihre Laufzeit beträgt nun " + jahre + "Jahre");
+		System.out.println("Ihre Laufzeit betrï¿½gt nun " + jahre + "Jahre");
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Wollen sie ihr Guthaben in " + jahre + " Jahren mit einem \nZinssatz von " + zins
-				+ "% und einem Startguthaben von " + guthaben + "€ \nund einer jährlichen Extra-Einzahlung\nvon "
-				+ ERHOEHUNG_1000_EURO + "€ errechnen? Geben sie (y/n) ein!");
+				+ "% und einem Startguthaben von " + guthaben + "ï¿½ \nund einer jï¿½hrlichen Extra-Einzahlung\nvon "
+				+ ERHOEHUNG_1000_EURO + "ï¿½ errechnen? Geben sie (y/n) ein!");
 
 		input = reader.readLine();
 		System.out.println("----------------------------------------------------------------");
@@ -69,13 +69,13 @@ public class Konto {
 		} else if (input.equals("y")) {
 			for (int i = 1; i <= jahre; i++) {
 				if (i == 1) {
-					System.out.println("Ihr Guthaben in Jahr " + i + " beträgt " + Math.round(guthaben) + "€"
-							+ " Sie zahlen nun noch " + ERHOEHUNG_1000_EURO + "€ ein.\n");
+					System.out.println("Ihr Guthaben in Jahr " + i + " betrï¿½gt " + Math.round(guthaben) + "ï¿½"
+							+ " Sie zahlen nun noch " + ERHOEHUNG_1000_EURO + "ï¿½ ein.\n");
 				} else {
 					guthaben *= (1 + (0.01 * zins));
 					guthaben += ERHOEHUNG_1000_EURO;
-					System.out.println("Ihr Guthaben in Jahr " + i + " beträgt " + Math.round(guthaben * 100.0) / 100.0
-							+ "€" + " Sie haben noch " + ERHOEHUNG_1000_EURO + "€ zusätzlich eingezahlt!\n");
+					System.out.println("Ihr Guthaben in Jahr " + i + " betrï¿½gt " + Math.round(guthaben * 100.0) / 100.0
+							+ "ï¿½" + " Sie haben noch " + ERHOEHUNG_1000_EURO + "ï¿½ zusï¿½tzlich eingezahlt!\n");
 				}
 			}
 		}
@@ -96,14 +96,14 @@ public class Konto {
 		double endeJahre = Double.parseDouble(input);
 		double zinsErtrag;
 		double gesamtZinsErtrag = 0;
-		double jährlicherZusatz = 1000;
+		double jaehrlicherZusatz = 1000;
 
 		System.out.println();
 
 		for (int i = 1; i <= endeJahre; i++) {
 			zinsErtrag = guthaben * (zins / 100);
 			System.out.println("Guthaben mit Zins in Jahr " + i + " : " + (guthaben + gesamtZinsErtrag));
-			guthaben += jährlicherZusatz;
+			guthaben += jaehrlicherZusatz;
 			gesamtZinsErtrag += zinsErtrag;
 
 		}
