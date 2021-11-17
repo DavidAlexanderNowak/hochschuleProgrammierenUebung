@@ -1,6 +1,6 @@
 package blatt05;
 
-/** "Normale" Klasse für Räume, mit Konstruktoren, Settern und Gettern */
+/** "Normale" Klasse fï¿½r Rï¿½ume, mit Konstruktoren, Settern und Gettern */
 public class Raum {
 	private String kuerzel;
 	private int anzahlPlaetze; // wie viele Personen passen rein?
@@ -17,11 +17,10 @@ public class Raum {
 	}
 
 	/**
-	 * Kürzel aus Kürzel für Gebäudenamen und Raumnummer
-	 * bauen
+	 * Kï¿½rzel aus Kï¿½rzel fï¿½r Gebï¿½udenamen und Raumnummer bauen
 	 * 
-	 * @param gebaeudeKuerzel Kürzel des Gebäudes, z.B. "E", "F", "SH", "LI"
-	 * @param anzahlPlaetze   Anzahl der Plätze in diesem Raum
+	 * @param gebaeudeKuerzel Kï¿½rzel des Gebï¿½udes, z.B. "E", "F", "SH", "LI"
+	 * @param anzahlPlaetze   Anzahl der Plï¿½tze in diesem Raum
 	 */
 	Raum(String gebaeudeKuerzel, int raumnummer, int anzahlPlaetze) {
 		this.setKuerzel(gebaeudeKuerzel + " " + raumnummer);
@@ -30,9 +29,9 @@ public class Raum {
 
 	/** Einen Raum am Bildschirm ausgeben */
 	public void print() {
-		System.out.print("Kürzel: " + this.getKuerzel());
-		System.out.print(", Plätze: " + this.getAnzahlPlaetze());
-		System.out.print(", Plätze bei Klausur: " + this.getAnzahlPlaetzeBeiKlausur());
+		System.out.print("Kï¿½rzel: " + this.getKuerzel());
+		System.out.print(", Plï¿½tze: " + this.getAnzahlPlaetze());
+		System.out.print(", Plï¿½tze bei Klausur: " + this.getAnzahlPlaetzeBeiKlausur());
 		if (this.hatAudio) {
 			System.out.print(", mit Audio");
 		} else {
@@ -40,37 +39,37 @@ public class Raum {
 		}
 	}
 
-	/** Anzahl der Plätze setzen */
+	/** Anzahl der Plï¿½tze setzen */
 	public void setAnzahlPlaetze(int plaetze) {
 		final int MINIMUM = 1;
-		int maximum = 100;//TODO Was ist das maximum? 100 als Platzhalter erstmal
+		final int MAXIMUM = 100;
 		if (plaetze < MINIMUM) {
-			System.err.println("Die Anzahl der Plätze muss größer als " + (MINIMUM - 1) + " sein.");
-		}/*TODO Prüfung gegen Maximum*/else if (plaetze > maximum) {
-			System.err.println("Die Anzahl der Plätze darf nicht größer als " + maximum + " sein.");
+			System.err.println("Die Anzahl der Plï¿½tze muss grï¿½ï¿½er als " + (MINIMUM - 1) + " sein.");
+		} else if (plaetze > MAXIMUM) {
+			System.err.println("Die Anzahl der Plï¿½tze darf nicht grï¿½ï¿½er als " + MAXIMUM + " sein.");
 		} else {
 			this.anzahlPlaetze = plaetze;
 		}
 	}
 
-	/** Anzahl der Plätze zurückgeben */
+	/** Anzahl der Plï¿½tze zurï¿½ckgeben */
 	public int getAnzahlPlaetze() {
 		return this.anzahlPlaetze;
 	}
 
-	/** Anzahl der Plätze bei Klausuren zurückgeben */
+	/** Anzahl der Plï¿½tze bei Klausuren zurï¿½ckgeben */
 	public int getAnzahlPlaetzeBeiKlausur() {
 		int freiePlaetzeJePruefling = 2;
 		return this.getAnzahlPlaetze() / (1 + freiePlaetzeJePruefling);
 	}
 
-	/** Kürzel setzen */
+	/** Kï¿½rzel setzen */
 	public void setKuerzel(String kuerzel) {
 		final int MINIMALE_ANZAHL_ZEICHEN = 2;
 		if (null == kuerzel) {
-			System.err.println("Das Kürzel darf nicht null sein!");
+			System.err.println("Das Kï¿½rzel darf nicht null sein!");
 		} else if (kuerzel.length() < MINIMALE_ANZAHL_ZEICHEN) {
-			System.err.println("Das Kürzel muss mindestens " + MINIMALE_ANZAHL_ZEICHEN + " Zeichen haben!");
+			System.err.println("Das Kï¿½rzel muss mindestens " + MINIMALE_ANZAHL_ZEICHEN + " Zeichen haben!");
 		} else {
 			this.kuerzel = kuerzel;
 		}
@@ -78,7 +77,7 @@ public class Raum {
 	}
 
 	/**
-	 * Konvention: Kürzel nur in Großbuchstaben
+	 * Konvention: Kï¿½rzel nur in Groï¿½buchstaben
 	 */
 	public String getKuerzel() {
 		return this.kuerzel.toUpperCase();

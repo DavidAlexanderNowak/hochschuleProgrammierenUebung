@@ -2,7 +2,7 @@ package blatt05;
 
 import java.util.Objects;
 
-/** Beispiel für Referenzen: Klasse für Mitarbeiter-Raumzuordnung */
+/** Beispiel fï¿½r Referenzen: Klasse fï¿½r Mitarbeiter-Raumzuordnung */
 public class Raumzuordnung {
 	private Raum raum;
 	private Person nutzer;
@@ -30,6 +30,7 @@ public class Raumzuordnung {
 		this.getNutzer().print();
 		System.out.print(" nutzt den Raum: ");
 		this.getRaum().print();
+		System.out.println(" als " + this.zuordnungsGrund);
 	}
 
 	Raum getRaum() {
@@ -57,18 +58,18 @@ public class Raumzuordnung {
 	}
 
 	public static void main(String[] a) throws Exception {
-		// Bröckl nutzt den Raum E 212a
-		Person ub = new Person("Ulrich", "Bröckl");
+		// Brï¿½ckl nutzt den Raum E 212a
+		Person ub = new Person("Ulrich", "Brï¿½ckl");
 		Raum e212a = new Raum("e 212a", 2);
-		Raumzuordnung ub2e212a = new Raumzuordnung(e212a, ub);
+		Raumzuordnung ub2e212a = new Raumzuordnung(e212a, ub, "BÃ¼ro");
 		ub2e212a.print();
 
-		// Bröckl nutzt außerdem den Raum E 201
-		Raumzuordnung ub2e201 = new Raumzuordnung(new Raum("e 201", 77, true), // keine Zwischenvariable für e201
-																				// nötig...
-				ub);
+		// Brï¿½ckl nutzt auï¿½erdem den Raum E 201
+		Raumzuordnung ub2e201 = new Raumzuordnung(new Raum("e 201", 77, true), // keine Zwischenvariable fï¿½r e201
+																				// nï¿½tig...
+				ub, "BÃ¼ro");
 		// Den Raum dieser Zuordnung ausgeben:
-		System.out.print("\n     Außerdem: ");
+		System.out.print("\n     Auï¿½erdem: ");
 		ub2e201.getRaum().print();
 		System.out.println("\n");
 
