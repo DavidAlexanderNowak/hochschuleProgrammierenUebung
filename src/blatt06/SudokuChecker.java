@@ -113,17 +113,22 @@ public class SudokuChecker {
 	}
 
 	/**
-	 * Pruefen, ob ein gegebener Wert an gegebener Position in einer Zeile erlaubt
-	 * ist.
-	 * 
-	 * @param zeile Zeile, in der der Wert geprueft wird
-	 * @param wert  Wert, der noch nicht in der Zeile vorhanden sein darf
-	 * @return true, falls Wert noch nicht vorhanden.
+	 * @param zeile Zeile des zu prüfenden Werts
+	 * @param wert  Wert, auf den überprüft wird
+	 * @return true, falls Wert alleine in der Zeile.
 	 */
 	private boolean isZeileOk(int zeile, int wert) {
-		// check every other value. If none is equal to checking value then true
-		for (int i = 0; i < ROW_SIZE; i++) {
-			if(spielFeld[zeile][i] == wert) {
+		return noEqualValues(spielFeld[zeile],wert);
+	}
+	
+	/**
+	 * @param values Array of int values
+	 * @param valueToCheck Value to check for
+	 * @return true, if values does not contain valueToCheck
+	 */
+	private boolean noEqualValues(int[] values, int valueToCheck) {
+		for (int value:values) {
+			if(value == valueToCheck) {
 				return false;
 			}
 		}
