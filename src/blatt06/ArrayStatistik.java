@@ -8,9 +8,8 @@ public class ArrayStatistik {
 			, 2, 67, 43, 26, 80, 92, 7, 40, 67, 66, 31, 45, 7, 100, 96, 93, 12//
 			, 20, 57, 22, 62, 51 };
 
-	private static final double[][] versicherungsSchaden = { new double[] { 0.0, 74.4 }//
-			, new double[] { 350.0, 18.2 }, new double[] { 1500.0, 6.1 }//
-			, new double[] { 5000.0, 1.3 } };
+	private static final double[][] versicherungsSchaden = { { 0.0, 74.4 }, { 350.0, 18.2 }, { 1500.0, 6.1 },
+			{ 5000.0, 1.3 } };
 
 	public static void main(String[] args) {
 
