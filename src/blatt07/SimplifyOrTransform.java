@@ -57,7 +57,7 @@ public class SimplifyOrTransform {
 		}
 
 		System.out.println();
-		for (int i = N0 + 1; i < N1 * N1; i += i) {
+		for (int i = N0 + 1; i < N1 * N1; i += i) {// <<=
 			System.out.print(i + ", ");
 		}
 		System.out.println();
@@ -97,8 +97,9 @@ public class SimplifyOrTransform {
 //		System.out.println();
 		for (int i = 3; i < 100; i += 2) {
 			b = 2;
+			
 			while (b * b < i && i % b != 0) {
-				b++;
+				b++;// Can be for
 			}
 			if (b * b > i) {
 				System.out.print(i + ", ");

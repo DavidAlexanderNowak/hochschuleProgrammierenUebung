@@ -1,5 +1,7 @@
 package blatt07;
 
+import java.util.Arrays;
+
 import blatt07.HolidayFeatures.Features;
 
 /**
@@ -21,7 +23,14 @@ class HolidayFeatures {
 	 * @param feature Gewünschtes Merkmal
 	 */
 	void setFeature(Features feature) {
-		// TODO
+		long bitMask = 1;
+		for (Features featureToCheck : Features.values()) {
+			if (feature.equals(featureToCheck)) {
+				featureBits = featureBits | bitMask;
+				return;
+			}
+			bitMask <<= 1;
+		}
 	}
 
 	/**
@@ -39,9 +48,14 @@ class HolidayFeatures {
 			}
 			theBit <<= 1;
 		}
+		
+		// TODO two substrings (last substring is just the ", "
 		char[] retCharArray = ret.toCharArray();
-		retCharArray[ret.lastIndexOf(',')] = '.';
-		return retCharArray.toString();
+		if(ret.lastIndexOf(',')>-1) {
+			retCharArray[ret.lastIndexOf(',')] = '.';
+		}
+		String retString = "";
+		return new String(retCharArray);
 	}
 
 	/**
@@ -75,6 +89,13 @@ class HolidayFeatures {
 		System.out.println("Match hf, hf2==" + hf.match(hf2));
 		hf2.setFeature(Features.Skipiste);
 		System.out.println("Match hf, hf2==" + hf.match(hf2));
+
+		// Eigene Tests
+		HolidayFeatures holidayFeatures = new HolidayFeatures();
+		holidayFeatures.setFeature(Features.Bar);
+
+		System.out.println("Test: " + holidayFeatures.toString());
+
 	}
 
 }
