@@ -75,7 +75,7 @@ class HolidayFeatures {
 	 * @return Anzahl übereinstimmender Features
 	 */
 	public int match(HolidayFeatures toMatch) {
-		return 0; // TODO
+		return Long.bitCount(featureBits & toMatch.featureBits);
 	}
 
 	/** Main zum Testen ... */
@@ -91,10 +91,25 @@ class HolidayFeatures {
 		System.out.println("Match hf, hf2==" + hf.match(hf2));
 
 		// Eigene Tests
-		HolidayFeatures holidayFeatures = new HolidayFeatures();
-		holidayFeatures.setFeature(Features.Bar);
+		HolidayFeatures holidayFeaturesToTest;
+		
+		// Test für toString()
+		holidayFeaturesToTest = new HolidayFeatures();
+		holidayFeaturesToTest.setFeature(Features.Bar);
 
-		System.out.println("Test: " + holidayFeatures.toString());
+		System.out.println("Test(should be Bar): " + holidayFeaturesToTest.toString());
+		
+		// Test für match(HolidayFeatures holidayFeatures)
+		holidayFeaturesToTest = new HolidayFeatures();
+		HolidayFeatures holidayFeaturesWithOneIdenticalFeature = new HolidayFeatures();
+
+		holidayFeaturesToTest.setFeature(Features.Aerobic);
+		holidayFeaturesToTest.setFeature(Features.Bistro);
+		
+		holidayFeaturesWithOneIdenticalFeature.setFeature(Features.Aerobic);
+		holidayFeaturesWithOneIdenticalFeature.setFeature(Features.Boccia);
+		
+		System.out.println("Test (should be 1): " + holidayFeaturesToTest.match(holidayFeaturesWithOneIdenticalFeature));
 
 	}
 
