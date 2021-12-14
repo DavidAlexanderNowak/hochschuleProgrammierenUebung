@@ -50,7 +50,7 @@ public class BasisWandler {
 		if (n <= 0L) { // Rekursionsbasis
 		} else {
 			result += inBasisKwandeln(n / k, k);
-			result = result+ intNachZiffer((int) (n % k));
+			result += intNachZiffer((int) (n % k));
 		}
 		return result;
 	}

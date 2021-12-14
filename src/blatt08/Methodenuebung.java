@@ -31,8 +31,7 @@ public class Methodenuebung {
 	}
 
 	public static double euclideanDistance(double x1, double y1, double x2, double y2) {
-		// TODO look up how to calculate this
-		return 0;
+		return Math.sqrt(Math.pow((y1 - y2), 2) + Math.pow((x1 - x2), 2));
 	}
 
 	public static double smallestNumber(double number1, double number2, double number3) {
@@ -81,6 +80,7 @@ public class Methodenuebung {
 			prt2468(n - 1);
 		} else {
 			if (n > 2) {
+				// Could check for even number here and then print (no need for so many ifs)
 				prt2468(n - 2);
 			}
 			System.out.print(n + ", ");
@@ -95,8 +95,8 @@ public class Methodenuebung {
 		}
 	}
 
-	public static void xxxIterative(int n) {
-		for (n = n; n > 0; n--) {
+	public static void xxxIterative(long n) {
+		for (; n > 0L; n--) {
 			System.out.println(n);
 		}
 	}
