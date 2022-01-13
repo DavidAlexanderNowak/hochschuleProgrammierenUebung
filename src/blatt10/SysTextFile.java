@@ -11,7 +11,7 @@ public class SysTextFile extends SysObjectBase {
 	}
 
 	@Override
-	public boolean isDirectory() {
+	protected boolean isDirectory() {
 		return false;
 	}
 
@@ -38,10 +38,10 @@ public class SysTextFile extends SysObjectBase {
 	@Override
 	public String toString() {
 		int textLength = 0;
-		if (text != null) {
+		if (text != null) {// could have been in a getLength() method (also for sysDir)
 			textLength = text.length();
 		}
-		return "Class=SysTextFile, type=" + type + ", name=" + name + ", user=" + owner + ", length=" + textLength;
+		return super.toString() + ", type=" + type + ", length=" + textLength;
 	}
 
 }

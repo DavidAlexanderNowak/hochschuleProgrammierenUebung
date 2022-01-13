@@ -2,8 +2,8 @@ package blatt10;
 
 public abstract class SysObjectBase {
 
-	protected String name;
-	protected String owner;
+	private String name;
+	private String owner;
 
 	/**
 	 * 
@@ -17,8 +17,8 @@ public abstract class SysObjectBase {
 	/**
 	 * Method to differentiate subclasses easily
 	 */
-	public abstract boolean isDirectory();
-	
+	protected abstract boolean isDirectory();
+
 	public String getOwner() {
 		return owner;
 	}
@@ -37,7 +37,7 @@ public abstract class SysObjectBase {
 
 	@Override
 	public String toString() {
-		return "Class=SysObjectBase, name=" + name + ", user=" + owner;
+		return "Class=" + this.getClass().getSimpleName() + ", name=" + name + ", user=" + owner;
 	};
 
 }

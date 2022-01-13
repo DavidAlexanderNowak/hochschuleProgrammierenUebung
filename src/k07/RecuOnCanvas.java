@@ -18,12 +18,14 @@ class Point2D
 	
 	/**  p2 von this abziehen */
 	// 10.2.5 Der zweite Punkt ist 'this' (die Instanz)
-	// 10.2.6.1 Das Referenzierte Objekt selbst liegt im Heap. p2 aber in der Method Area
-	// (bei p2 unsicher).
+	// 10.2.6.1 Das Referenzierte Objekt selbst liegt im Heap. p2 (variable selbst) liegt im stack
+	// zeigt auf etwas das im heap liegt
+	// (bei p2 unsicher) Method Area -> Statische Methoden.
 	// 10.2.6.2 p2 ist funktionell dasselbe wie das Objekt das beim Methodenaufruf als Parameter
 	// genutzt wurde. Aber es ist eben nicht dasselbe, nur alles was man an p2 ändert,
 	// ändert sich auch an dem als Parameter genutzten Objekt.
 	Point2D diff(Point2D p2){
+//		p2 = null;// Bei richtigem call-by-reference würde auch das Objekt auf dem Heap null werden.
 		return new Point2D(this.getX() - p2.getX(),  this.getY() - p2.getY());
 	}
 	/** p2 zu this addieren */
